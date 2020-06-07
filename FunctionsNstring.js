@@ -122,3 +122,10 @@ clean.push(email.forEach(po => po.split("@")[0]));
      name : emails.split("@"),
      index}
  ))
+
+
+
+
+
+
+ 
