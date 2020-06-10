@@ -61,7 +61,7 @@ console.log(user);*/
 
 //intro for Rest parameters~~~~~ 
 
-
+/*
 const infiniteArgs = (...potato) => console.log(potato);
 
 infiniteArgs("1",2,true,"awdawd",1,2,3,4,5,[1,2,3,4]);
@@ -73,3 +73,33 @@ console.log(potato);
 };
 
 peopleMaker("jisang","lynn","upper",1,2,3);
+
+/// fundamentally minimize value
+*/
+
+
+const user ={
+    name:"jisang",
+    age:25,
+    password: 12345
+};
+
+const killPassword = ({password,...rest}) => rest;  //implicit return
+
+const cleanUser = killPassword(user);
+console.log(cleanUser);
+
+
+const setDefault =({country= "KR" , ...rest}) => ({country, ...rest});
+
+const DefaultUser = setDefault(user);
+console.log(DefaultUser);
+
+///add property
+
+
+///rename
+
+const renameUser =({name:changeName, ... rest}) =>({name,...rest});
+
+console.log(renameUser);
