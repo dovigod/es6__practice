@@ -120,7 +120,8 @@ clean.push(email.forEach(po => po.split("@")[0]));
 
  const cleaned = email.map((emails,index)=> ({
      name : emails.split("@"),
-     index}
+     index
+    }
  ))
 
 
@@ -128,4 +129,35 @@ clean.push(email.forEach(po => po.split("@")[0]));
 
 
 
- 
+
+
+ ///template literals/
+
+
+ const div = `<div class = "hahaha " >
+                    <div class = "inner"> hi</div>
+                    </div>`;
+    // this workss!!!!
+
+
+const friends = ["jisang","chamm","sj"];
+
+const ul = document.createElement("ul");
+
+friends.forEach(friend => ul.append(`<li>${friend}</li>`));
+
+div.append(ul);
+
+//이거랑
+
+//friends.join(" ");    ///요소들 사이에 띄어쓰기 넣기
+const list =`
+    <ul>
+        ${friends.map(friend => `<li>${friend}</li>`)}.join(" ");
+        </ul>`;
+
+
+
+div.innerHTML(list);
+
+///이거랑 결과가 같음
