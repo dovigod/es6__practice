@@ -25,13 +25,36 @@ const hello = new Promise((resolve,reject)=>{
      },3000);
 });
 
-setInterval(console.log,1000,hello);
+//setInterval(console.log,1000,hello);
 
-set
 console.log(hello);
 
 //content가 없다면 계속  pending 상태임.. promise가 끝나길 기다리는중  resol e가 끝나야 시행함
+//핵심은 아직모르는 value와 함께 작업 가능하게 해줌
 
 
 
+//then 명령어 ->  작업 완료시 값을 넘김
 
+hello.then(value =>console.log(value)).catch(value=>{console.timeLog(value)});
+
+//cathch는 오류 잡을떄   then 실행시 젋댜 실행안댐
+
+///chain reation if, get data of API for decription, decrypt, filization
+
+const jisang = new Promise((resolve,reject)=>{
+    resolve(2)
+});
+
+
+jisang.then(numb =>{
+    console.log(numb*2);
+    return numb*2;
+}).then(ot=>{
+    console.log(ot);
+    return ot;
+}).then(()=>{
+    throw Error("fuck!!!");
+}).then(last =>{
+    console.log(last);
+}).catch(error => console.log(error)); //이러면 에러 객체가 발생하는 곳을 로그해줌
