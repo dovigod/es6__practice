@@ -116,7 +116,7 @@ const p1 = new Promise((resole,reject) => {
 */
 
 //fetch 가 보통 promise 의 한 종류임
-
+/*
 fetch("https://yts.mx/api/v2/list_movies.json")
 .then(response => {
     console.log(response);
@@ -125,7 +125,35 @@ fetch("https://yts.mx/api/v2/list_movies.json")
 }).then( text => console.log(text))
 .catch(err => console.log(`{err} fucked ❌`))
 .finally(console.log("promise fin"));///==> 우리의 html이 나옴
+*/
+
+///async// await ==> for updating promises
+
+///then looks ugly n old fashion  makes code more better
+/// can get values for out of promises without then,catch
+
+//async function getMoviesP{}
+
+const getMoviesAsync = async() =>{
+    try{
+        const responses = await fetch("https://yts.mx/api/v2/list_movies.json");
+   ///r responce val을 좌 변수에 대입함  await 기본적으로 async함수안에서 쓰임
+   /// 패치 끝날때까지 기다렷다 시행함
+   //doesnt matter neither is resolves or rejected
+    const json =await responses.json();
+
+    console.log(json);
+//  throw Error("Fucked up")
+    }catch(e){
+        console.log(e);
+
+    } finally{
+        console.log("finsihed~~");
+    }/// catch는 await쪽 모든 에러를 검출함 뿐만아니라 에러도 잡음 밖에있는
+
+    
+}
+getMoviesAsync();
 
 
-
-
+//about Parallel with async
