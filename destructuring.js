@@ -55,3 +55,5 @@ const [, , ,thu,fri] = days;
 
 console.log(thu,fri);
 
+//스킵!
+
