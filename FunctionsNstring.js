@@ -161,3 +161,24 @@ const list =`
 div.innerHTML(list);
 
 ///이거랑 결과가 같음
+
+
+
+//// useful string Method
+
+//include
+
+const isEmail = email => {
+    email.include("@");
+}
+// -> if true ==> return true;\
+
+//repeat  
+
+const CC_NUMB = "6060";
+
+const displayName = `${"*".repeat(10)}${CC_NUMB}`;
+
+///반복해줌
+
+//startsWith, EndsWith    ===> 참시 true return
