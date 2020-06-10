@@ -72,8 +72,8 @@ const p1 = new Promise((resolve) =>{
     setTimeout(resolve , 5000,"first");
 });
 
-const p2 = new Promise((resolve) =>{
-    setTimeout(reject , 1000,"fuck");
+const p2 = new Promise((resolve,reject) =>{
+    setTimeout(reject , 10000,"fuck");
 }); 
 
 const p3 =new Promise((resolve,reject) =>{
@@ -85,10 +85,38 @@ const p3 =new Promise((resolve,reject) =>{
 
 const motherPromise = Promise.all([p1,p2,p3]);
 
-motherPromise.then(values =>{
+/*motherPromise.then(values =>{
     console.log(values);
-}).catch(err =>console.log(err));
+}).catch(err =>console.log(err));*/
 
 //==> [ f,s,t] ==> 실행 시간에 상관없이 순서대로 array가 만들어짐
 
 //reject로 바꾸면  error발생,, 하나라도 거절당하면 마더약속도 거절당함 거절당하는 순간 바로 거절
+
+
+//promise race 가장 빠른게 결과임 여러개의 약속들 중 어떤게 먼저와도 상관없다면 쓰자
+/*
+const racePromise= Promise.race([p1,p2,p3]);
+racePromise.then(val => console.log(val)).catch(err => console.log(err));
+*/
+
+
+
+///finalizing  when u want to save smt either its successs or rejected
+
+
+/*
+const p1 = new Promise((resole,reject) => {
+    setTimeout(reject,10000,"first");
+}).then(value =>console.log(value))
+.catch(err =>console.log(err))
+.finally(()=>console.log("fin"));
+
+//보통 api호출시 쓰장
+*/
+
+
+
+
+
+
