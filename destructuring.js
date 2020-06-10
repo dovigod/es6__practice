@@ -13,3 +13,26 @@ saveSetting({
         theme: "red"
     }
 });*/
+
+
+////value shorthands
+
+
+const follow = checkFollow();
+
+const alert = checkAlert();
+
+const ssetting ={
+    notify:{
+        follow: follow,
+        alert: alert
+    }
+}
+//위처럼 이름이 같을때, 
+
+const ssetting ={
+    notify:{
+        follow,
+        alert
+    }
+}
