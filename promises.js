@@ -115,7 +115,16 @@ const p1 = new Promise((resole,reject) => {
 //보통 api호출시 쓰장
 */
 
+//fetch 가 보통 promise 의 한 종류임
 
+fetch("https://yts.mx/api/v2/list_movies.json")
+.then(response => {
+    console.log(response);
+    return response.json();
+
+}).then( text => console.log(text))
+.catch(err => console.log(`{err} fucked ❌`))
+.finally(console.log("promise fin"));///==> 우리의 html이 나옴
 
 
 
