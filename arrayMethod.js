@@ -25,15 +25,11 @@ Array.from(button).forEach(button =>{
     button.addEventListener("click", btn => {
         console.dir(btn.target);
         btn.target.style.color ="red";
-    })
-
+        })
 });
 
 /// 유용하쥬?
-
-
 //find ==> element 중 true 를 리턴
-
 //findindex ==>  elemt 중 true의 index 리턴
-
 //fill from start~end    arr.fill(val,start,end);
+
