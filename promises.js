@@ -136,13 +136,20 @@ fetch("https://yts.mx/api/v2/list_movies.json")
 
 const getMoviesAsync = async() =>{
     try{
-        const responses = await fetch("https://yts.mx/api/v2/list_movies.json");
-   ///r responce val을 좌 변수에 대입함  await 기본적으로 async함수안에서 쓰임
+        const [movieRes,upcomingRes]= await Promise.all([
+            fetch("https://yts.mx/api/v2/list_movies.json"),
+            fetch("https://yts.mx/api/v2/movie_suggestions.json?movie_id=100")
+        ]);
+            //반환값은 기본적으로 배열
+        const [movies,upcoming] = await Promise.all([
+            movieRes.json(),
+            upcomingRes.json()
+            ]);
+
+        ///r responce val을 좌 변수에 대입함  await 기본적으로 async함수안에서 쓰임
    /// 패치 끝날때까지 기다렷다 시행함
    //doesnt matter neither is resolves or rejected
-    const json =await responses.json();
-
-    console.log(json);
+    console.log(movies,upcoming);
 //  throw Error("Fucked up")
     }catch(e){
         console.log(e);
@@ -156,4 +163,4 @@ const getMoviesAsync = async() =>{
 getMoviesAsync();
 
 
-//about Parallel with async
+//about Parallel with async 병렬로 작동함!
