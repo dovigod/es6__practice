@@ -27,7 +27,7 @@ console.log({...nice, ...hello});*/
 
 ///addding obj erase obj
 
-
+/*
 const people = ["jisang","nico"];
 
 const newp = ["ass",...people];
@@ -48,14 +48,28 @@ const user = {
     age:25,
     lastName : lastName !== "" ? lastName : null
 }*/
-
+/*
 const user = {
     username:"jisa",
     age: 25,
     ...(lastName !=="" && {myname:lastName})///여기 중가로 안치면 글자마다 배열화됨;
 }
 
-console.log(user);
+console.log(user);*/
 
 ///조건부로 넣어줬엉
 
+//intro for Rest parameters~~~~~ 
+
+
+const infiniteArgs = (...potato) => console.log(potato);
+
+infiniteArgs("1",2,true,"awdawd",1,2,3,4,5,[1,2,3,4]);
+
+
+
+const peopleMaker = (first,...potato) =>{console.log(`people is ${first}`);
+console.log(potato);
+};
+
+peopleMaker("jisang","lynn","upper",1,2,3);
