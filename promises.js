@@ -164,3 +164,6 @@ getMoviesAsync();
 
 
 //about Parallel with async 병렬로 작동함!
+
+
+///"axios 쓰면 텍스트나 이런걸로 자동변환해줌 함 보자"
