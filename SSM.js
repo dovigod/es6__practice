@@ -38,7 +38,7 @@ const user ={
 
 user.oneMore =true;
 
-*/
+*//*
 const SSets = new Set([1,2,3,4,4,5,6]);
 
 ///-> erase combinated value
@@ -87,4 +87,18 @@ weakSet.add({hello:true});
 
 console.log(weakSet);
 //hello 같은경우 제거당함
+*/
 
+
+////map  === set과 비슷 한데 key값을 가짐
+
+
+const map = new Map();
+
+//no add but set
+
+map.set("age",18);
+
+console.log(map.entries());
+console.log(map);
+//weak map ===> same as weak set
